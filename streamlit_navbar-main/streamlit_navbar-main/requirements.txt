@@ -1,2 +1,2 @@
 streamlit
-flask
+Flask==2.0.1  # Replace with the actual version you want
