@@ -1,2 +1,2 @@
-streamlit
+streamlit = 0.84.0
 Flask== 2.3.2
