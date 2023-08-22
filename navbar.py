@@ -13,9 +13,10 @@ st.markdown("""
 st.markdown('''# **Binance Price App**
 A simple cryptocurrency price app pulling price data from *Binance API*.
 ''')
-
-# Insert your selectbox code here
-selected_item = st.selectbox("Select an item", ["Item 1", "Item 2", "Item 3"])
+ option = st.selectbox(
+     'How would you like to be contacted?',
+     ('Email', 'Home phone', 'Mobile phone'))
+st.write('You selected:', option)
 
 st.markdown("""
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
