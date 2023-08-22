@@ -33,7 +33,7 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
-st.markdown('''# **Binance Price App**
+st.markdown('''# **NTT DATA**
 A simple cryptocurrency price app pulling price data from *Binance API*.
 ''')
 
