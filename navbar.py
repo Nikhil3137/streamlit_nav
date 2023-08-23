@@ -1,14 +1,36 @@
 import streamlit as st
 
+# Define CSS styles for the navigation bar
+st.markdown(
+    """
+    <style>
+    .navbar {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        background-color: #333;
+    }
+    .nav-button {
+        margin: 0 10px;
+        color: white;
+        font-size: 18px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 def main():
     st.title("Multi-Page Streamlit App")
 
     navigation_options = ["Home", "Results", "Analysis", "Examples"]
 
-    with st.beta_container():
-        for option in navigation_options:
-            if st.button(option):
-                selected_navigation = option
+    # Create a horizontal navigation bar using CSS styles
+    st.markdown('<div class="navbar">', unsafe_allow_html=True)
+    for option in navigation_options:
+        if st.button(option, class_="nav-button"):
+            selected_navigation = option
+    st.markdown('</div>', unsafe_allow_html=True)
 
     if selected_navigation == "Home":
         st.header("Home")
