@@ -8,7 +8,7 @@ def main():
     
     # Place the radio buttons in the horizontal layout
     with radio_container:
-        col1, col2, col3, col4 = st.beta_columns(4)
+        col1, col2, col3, col4 = st.columns(4)
         navigation = col1.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
@@ -42,7 +42,6 @@ def main():
             st.write("You selected Model C. Here's some information about it.")
             st.write("For more details, visit the [Model C Page](https://yourdomain.com/model_c)")
 
-# Call the main function
 if __name__ == "__main__":
     main()
 
