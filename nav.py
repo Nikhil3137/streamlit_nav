@@ -2,15 +2,19 @@ import streamlit as st
 
 def main():
     st.title("NTT DATA")
-    
-    # Create a container for the horizontal header bar
-    header_container = st.beta_container()
-    
-    # Add navigation links to the header container
-    with header_container:
+
+    # Create two columns for the header bar
+    col1, col2 = st.beta_columns([1, 4])
+
+    # In the first column, you can add your logo or any content
+    with col1:
+        st.write("Your Logo Here")
+
+    # In the second column, add navigation links
+    with col2:
         nav_links = ["Home", "Results", "Analysis", "Models"]
         navigation = st.radio("Navigation", nav_links)
-    
+
     if navigation == "Home":
         st.header("Home")
         st.write("This is the home page.")
