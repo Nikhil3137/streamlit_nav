@@ -15,7 +15,7 @@ def main():
             .sidebar .header {
                 font-family: 'Georgia', serif;
             }
-            /* Change font style for the model dropdown */
+            /* Change font style and background color for the model dropdown */
             .sidebar .selectbox select {
                 font-family: 'Verdana', sans-serif;
                 background-color: #f4f4f4;
@@ -23,6 +23,10 @@ def main():
                 border-radius: 5px;
                 padding: 5px;
                 color: #333;
+            }
+            /* Change background color of the sidebar */
+            .sidebar .sidebar-content {
+                background-color: #f0f0f0;
             }
         </style>
         """,
