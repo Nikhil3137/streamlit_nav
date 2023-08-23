@@ -10,7 +10,6 @@ def main():
     <style>
     .navigation-bar {
         display: flex;
-        justify-content: space-around;
         background-color: #333;
         padding: 10px;
         color: white;
@@ -18,6 +17,7 @@ def main():
     .nav-link {
         text-decoration: none;
         color: white;
+        margin-right: 20px;
     }
     </style>
     <div class="navigation-bar">
