@@ -2,8 +2,15 @@ import streamlit as st
 
 def main():
     st.title("NTT DATA")
-    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
-
+    
+    # Create a container for the horizontal header bar
+    header_container = st.beta_container()
+    
+    # Add navigation links to the header container
+    with header_container:
+        nav_links = ["Home", "Results", "Analysis", "Models"]
+        navigation = st.radio("Navigation", nav_links)
+    
     if navigation == "Home":
         st.header("Home")
         st.write("This is the home page.")
@@ -36,7 +43,6 @@ def main():
             st.write("For more details, visit the [Model C Page](https://yourdomain.com/model_c)")
 
     # Use st.markdown to create a custom footer
-
     st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
 
 if __name__ == "__main__":
