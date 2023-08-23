@@ -2,7 +2,30 @@ import streamlit as st
 
 def main():
     st.title("Multi-Page Streamlit App")
-    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Examples"])
+
+    # Add a navigation dropdown using HTML and Bootstrap
+    st.markdown('''
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Examples
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/example1">Example 1</a>
+              <a class="dropdown-item" href="/example2">Example 2</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    ''', unsafe_allow_html=True)
+
+    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis"])
 
     if navigation == "Home":
         st.header("Home")
@@ -18,24 +41,6 @@ def main():
         x, y = st.number_input("Input X"), st.number_input("Input Y")
         result = x + y
         st.write(f"Result: {result}")
-
-    elif navigation == "Examples":
-        st.header("Examples Menu")
-        st.write("Select an example.")
-
-        # Dropdown menu using HTML, CSS, and Bootstrap
-        st.markdown('''
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="examplesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select an example
-          </button>
-          <div class="dropdown-menu" aria-labelledby="examplesDropdown">
-            <a class="dropdown-item" href="#">Example 1</a>
-            <a class="dropdown-item" href="#">Example 2</a>
-            <a class="dropdown-item" href="#">Example 3</a>
-          </div>
-        </div>
-        ''', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
