@@ -2,24 +2,30 @@ import streamlit as st
 
 def main():
     st.title("Multi-Page Streamlit App")
-    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Examples"])
 
-    if navigation == "Home":
+    navigation_options = ["Home", "Results", "Analysis", "Examples"]
+    selected_navigation = st.button("Home")  # Default selection
+
+    for option in navigation_options[1:]:
+        st.write(" | ", end="")
+        selected_navigation = st.button(option) or selected_navigation
+
+    if selected_navigation == "Home":
         st.header("Home")
         st.write("This is the home page.")
 
-    elif navigation == "Results":
+    elif selected_navigation == "Results":
         st.header("Results List")
         for item in range(25):
             st.write(f"Result {item}")
 
-    elif navigation == "Analysis":
+    elif selected_navigation == "Analysis":
         st.header("Analysis")
         x, y = st.number_input("Input X"), st.number_input("Input Y")
         result = x + y
         st.write(f"Result: {result}")
 
-    elif navigation == "Examples":
+    elif selected_navigation == "Examples":
         st.header("Examples Menu")
         st.write("Select an example.")
 
