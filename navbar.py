@@ -4,11 +4,11 @@ def main():
     st.title("Multi-Page Streamlit App")
 
     navigation_options = ["Home", "Results", "Analysis", "Examples"]
-    selected_navigation = st.button("Home")  # Default selection
 
-    for option in navigation_options[1:]:
-        st.write(" | ", end="")
-        selected_navigation = st.button(option) or selected_navigation
+    with st.beta_container():
+        for option in navigation_options:
+            if st.button(option):
+                selected_navigation = option
 
     if selected_navigation == "Home":
         st.header("Home")
