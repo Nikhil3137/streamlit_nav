@@ -45,8 +45,11 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Use HTML <iframe> tag to embed the custom footer
+# Use HTML and CSS to create a custom footer
 custom_footer = """
-<iframe src="https://yourdomain.com/footer" width="100%" height="100" style="border:none;"></iframe>
+<div style="background-color: #f4f4f4; padding: 10px; text-align: center;">
+    <p>Contact Us: <a href="mailto:contact@example.com">contact@example.com</a></p>
+    <p><a href="https://yourdomain.com/about_us">Learn more about us</a></p>
+</div>
 """
 st.markdown(custom_footer, unsafe_allow_html=True)
