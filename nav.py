@@ -23,8 +23,17 @@ def main():
 
     elif navigation == "Models":
         st.sidebar.header("Model List")
-        model_option = st.sidebar.selectbox("Select a model", ["Model A", "Model B", "Model C"])
         
+        # Add CSS styling for the selectbox
+        st.sidebar.markdown('<style>.selectbox select {background-color: #f4f4f4; border: 1px solid #ccc; border-radius: 5px; padding: 5px; color: #333;}</style>', unsafe_allow_html=True)
+        
+        # Create a container for the selectbox
+        model_container = st.sidebar.container()
+        
+        # Place the selectbox in the container
+        with model_container:
+            model_option = st.selectbox("Select a model", ["Model A", "Model B", "Model C"], key="model_select")
+
         if model_option == "Model A":
             st.write("You selected Model A. Here's some information about it.")
             st.write("For more details, visit the [Model A Page](https://yourdomain.com/model_a)")
