@@ -2,24 +2,25 @@ import streamlit as st
 
 def main():
     navigation_options = ["Home", "Results", "Analysis", "Examples"]
-    selected_navigation = st.selectbox("Navigation", navigation_options)
+    selected_navigation = st.radio("Navigation", navigation_options)
 
     st.markdown(
         """
         <style>
-        .navbar {
+        .navigation-bar {
             display: flex;
             justify-content: space-around;
-            padding: 10px;
             background-color: #333;
             color: white;
+            padding: 10px;
         }
-        .navbar a {
+        .navigation-bar a {
             text-decoration: none;
             color: white;
+            font-weight: bold;
         }
         </style>
-        <div class="navbar">
+        <div class="navigation-bar">
             <a href="/">Home</a>
             <a href="/results">Results</a>
             <a href="/analysis">Analysis</a>
