@@ -4,36 +4,32 @@ def main():
     navigation_options = ["Home", "Results", "Analysis", "Examples"]
     selected_navigation = st.selectbox("Navigation", navigation_options)
 
+    st.markdown(
+        """
+        <style>
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+        }
+        </style>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/results">Results</a>
+            <a href="/analysis">Analysis</a>
+            <a href="/examples">Examples</a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.title("Multi-Page Streamlit App")
-
-    st.markdown("""
-    <style>
-    .navigation-bar {
-        display: flex;
-        justify-content: space-around;
-        background-color: #333;
-        padding: 10px;
-        color: white;
-    }
-    .navigation-link {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .navigation-link:hover {
-        color: #66ccff;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    st.write(f"""
-    <div class="navigation-bar">
-        <a class="navigation-link" href="?p=Home">Home</a>
-        <a class="navigation-link" href="?p=Results">Results</a>
-        <a class="navigation-link" href="?p=Analysis">Analysis</a>
-        <a class="navigation-link" href="?p=Examples">Examples</a>
-    </div>
-    """)
 
     if selected_navigation == "Home":
         st.header("Home")
