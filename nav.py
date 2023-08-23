@@ -19,7 +19,7 @@ def main():
         result = x + y
         st.write(f"Result: {result}")
 
-    elif navigation == "Examples":
+    elif navigation == "Model":
         st.header("Examples Menu")
         st.write("Select an example.")
 
