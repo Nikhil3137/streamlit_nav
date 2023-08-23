@@ -46,11 +46,11 @@ def main():
             /* Change style of the model dropdown */
             .sidebar .stSelectbox select {
                 font-family: 'Verdana', sans-serif;
-                background-color: white;
+                background-color: #333; /* Change the background color */
                 border: 1px solid #ccc;
                 border-radius: 5px;
                 padding: 5px;
-                color: #333;
+                color: white; /* Change the font color */
                 width: 100%;
             }
         </style>
@@ -81,6 +81,21 @@ def main():
         
         # Create a container for the selectbox
         model_container = st.sidebar.container()
+        
+        # Apply custom CSS style to the model container
+        model_container.markdown(
+            """
+            <style>
+                /* Change background color of the model container */
+                .widget.stContainer {
+                    background-color: #444;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
         
         # Place the selectbox in the container
         with model_container:
