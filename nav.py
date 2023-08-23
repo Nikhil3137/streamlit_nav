@@ -25,16 +25,15 @@ def main():
         
         if model_option == "Model A":
             st.write("You selected Model A. Here's some information about it.")
+            st.write("For more details, visit the [Model A Page](https://yourdomain.com/model_a)")
+
         elif model_option == "Model B":
             st.write("You selected Model B. Here's some information about it.")
+            st.write("For more details, visit the [Model B Page](https://yourdomain.com/model_b)")
+
         elif model_option == "Model C":
             st.write("You selected Model C. Here's some information about it.")
+            st.write("For more details, visit the [Model C Page](https://yourdomain.com/model_c)")
 
 if __name__ == "__main__":
-    st.image(""C:\Users\Nikhil\Downloads\pngwing.com.png"", use_column_width=True)
-    col1, col2 = st.beta_columns([1, 3])
-    with col1:
-        st.write("")
-    with col2:
-        st.title("NTT DATA")
     main()
