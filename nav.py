@@ -4,7 +4,7 @@ def main():
     st.title("NTT DATA")
 
     # Create two columns for the header bar
-    col1, col2 = st.beta_columns([1, 3])
+    col1, col2 = st.columns([1, 3])
 
     # In the first column, you can add your logo or any content
     with col1:
