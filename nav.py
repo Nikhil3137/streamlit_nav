@@ -31,4 +31,10 @@ def main():
             st.write("You selected Model C. Here's some information about it.")
 
 if __name__ == "__main__":
+    st.image("ntt_data_logo.png", use_column_width=True)
+    col1, col2 = st.beta_columns([1, 3])
+    with col1:
+        st.write("")
+    with col2:
+        st.title("NTT DATA")
     main()
