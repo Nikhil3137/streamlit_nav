@@ -1,10 +1,12 @@
 import streamlit as st
 
 def main():
-    st.title("Multi-Page Streamlit App")
-
     navigation_options = ["Home", "Results", "Analysis", "Examples"]
-    selected_navigation = st.radio("Navigation", navigation_options)
+    selected_navigation = st.sidebar.radio("Navigation", navigation_options)
+
+    st.write(" | ".join(navigation_options))  # Display navigation horizontally
+
+    st.title("Multi-Page Streamlit App")
 
     if selected_navigation == "Home":
         st.header("Home")
