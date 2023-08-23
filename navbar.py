@@ -3,7 +3,7 @@ import streamlit as st
 def main():
     st.title("Multi-Page Streamlit App")
 
-    navigation_options = ["Home", "Results", "Analysis", "Examples"]
+    navigation_options = ["Home", "Analysis", "Examples"]
     selected_navigation = st.sidebar.radio("Navigation", navigation_options)
 
     navigation_bar = """
@@ -27,7 +27,7 @@ def main():
         <a class="nav-link" href="?p=examples">Examples</a>
     </div>
     """
-    
+
     st.markdown(navigation_bar, unsafe_allow_html=True)
 
     if selected_navigation == "Home":
