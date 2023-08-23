@@ -2,7 +2,14 @@ import streamlit as st
 
 def main():
     st.title("NTT DATA")
-    navigation = st.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
+    
+    # Create a horizontal layout for the radio buttons
+    radio_container = st.container()
+    
+    # Place the radio buttons in the horizontal layout
+    with radio_container:
+        col1, col2, col3, col4 = st.beta_columns(4)
+        navigation = col1.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
         st.header("Home")
@@ -35,9 +42,9 @@ def main():
             st.write("You selected Model C. Here's some information about it.")
             st.write("For more details, visit the [Model C Page](https://yourdomain.com/model_c)")
 
-    # Use st.markdown to create a custom footer
-
-    st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
-
+# Call the main function
 if __name__ == "__main__":
-    main()       
+    main()
+
+# Add the custom footer at the end of the app
+st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
