@@ -19,9 +19,16 @@ def main():
         result = x + y
         st.write(f"Result: {result}")
 
-    elif navigation == "Model":
+    elif navigation == "Models":
         st.header("Model List")
-        st.write("Select an example.")
+        model_option = st.selectbox("Select an example", ["Model A", "Model B", "Model C"])
+        
+        if model_option == "Model A":
+            st.write("You selected Model A. Here's some information about it.")
+        elif model_option == "Model B":
+            st.write("You selected Model B. Here's some information about it.")
+        elif model_option == "Model C":
+            st.write("You selected Model C. Here's some information about it.")
 
 if __name__ == "__main__":
     main()
