@@ -2,6 +2,8 @@ import streamlit as st
 
 def main():
     st.title("Multi-Page Streamlit App")
+    
+    # Sidebar navigation
     navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
@@ -20,8 +22,8 @@ def main():
         st.write(f"Result: {result}")
 
     elif navigation == "Models":
-        st.header("Model List")
-        model_option = st.selectbox("Select an example", ["Model A", "Model B", "Model C"])
+        st.sidebar.header("Model List")
+        model_option = st.sidebar.selectbox("Select a model", ["Model A", "Model B", "Model C"])
         
         if model_option == "Model A":
             st.write("You selected Model A. Here's some information about it.")
@@ -35,7 +37,7 @@ def main():
             st.write("You selected Model C. Here's some information about it.")
             st.write("For more details, visit the [Model C Page](https://yourdomain.com/model_c)")
 
-    # Use st.markdown to create a custom footer
+    # Custom footer
     st.markdown("---")
     st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
 
