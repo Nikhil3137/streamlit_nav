@@ -2,35 +2,20 @@ import streamlit as st
 
 def main():
     navigation_options = ["Home", "Results", "Analysis", "Examples"]
-    selected_navigation = st.radio("Navigation", navigation_options)
-
-    st.markdown(
-        """
-        <style>
-        .navigation-bar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333;
-            color: white;
-            padding: 10px;
-        }
-        .navigation-bar a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-        </style>
-        <div class="navigation-bar">
-            <a href="/">Home</a>
-            <a href="/results">Results</a>
-            <a href="/analysis">Analysis</a>
-            <a href="/examples">Examples</a>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    selected_navigation = st.selectbox("Navigation", navigation_options, index=0)
 
     st.title("Multi-Page Streamlit App")
+
+    # Display navigation options horizontally
+    st.markdown(
+        '<div style="display: flex; justify-content: space-around; padding: 1em;">'
+        f'<a href="#">Home</a> | '
+        f'<a href="#">Results</a> | '
+        f'<a href="#">Analysis</a> | '
+        f'<a href="#">Examples</a>'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
     if selected_navigation == "Home":
         st.header("Home")
