@@ -2,7 +2,7 @@ import streamlit as st
 
 def main():
     st.title("NTT DATA")
-    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
+    navigation = st.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
         st.header("Home")
