@@ -1,7 +1,7 @@
 import streamlit as st
 
 def main():
-    st.title("NTT DATA")
+    st.title("Multi-Page Streamlit App")
     navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
@@ -37,3 +37,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    # Add footer
+    st.sidebar.markdown("---")
+    st.sidebar.write("### Contact Us")
+    st.sidebar.write("For inquiries, email us at contact@example.com")
+    st.sidebar.write("### About Us")
+    st.sidebar.write("Learn more about our company at [About Us](https://yourdomain.com/about_us)")
