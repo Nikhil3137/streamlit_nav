@@ -3,6 +3,32 @@ import streamlit as st
 def main():
     st.title("Multi-Page Streamlit App")
     
+    # Apply custom CSS styles to the Streamlit app
+    st.markdown(
+        """
+        <style>
+            /* Change font style for the whole app */
+            body {
+                font-family: 'Arial', sans-serif;
+            }
+            /* Change font style for the sidebar header */
+            .sidebar .header {
+                font-family: 'Georgia', serif;
+            }
+            /* Change font style for the model dropdown */
+            .sidebar .selectbox select {
+                font-family: 'Verdana', sans-serif;
+                background-color: #f4f4f4;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 5px;
+                color: #333;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
     # Sidebar navigation
     navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
@@ -23,9 +49,6 @@ def main():
 
     elif navigation == "Models":
         st.sidebar.header("Model List")
-        
-        # Add CSS styling for the selectbox
-        st.sidebar.markdown('<style>.selectbox select {background-color: #f4f4f4; border: 1px solid #ccc; border-radius: 5px; padding: 5px; color: #333;}</style>', unsafe_allow_html=True)
         
         # Create a container for the selectbox
         model_container = st.sidebar.container()
