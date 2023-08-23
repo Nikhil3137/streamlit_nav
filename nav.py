@@ -45,5 +45,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Add the custom footer at the end of the app
-st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
+# Use HTML <iframe> tag to embed the custom footer
+custom_footer = """
+<iframe src="https://yourdomain.com/footer" width="100%" height="100" style="border:none;"></iframe>
+"""
+st.markdown(custom_footer, unsafe_allow_html=True)
