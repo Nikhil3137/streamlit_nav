@@ -4,9 +4,7 @@ def main():
     st.title("Multi-Page Streamlit App")
 
     navigation_options = ["Home", "Results", "Analysis", "Examples"]
-    selected_navigation = st.radio("Navigation", navigation_options, index=0, format_func=lambda x: "")
-
-    st.write(" | ".join(navigation_options))  # Display navigation horizontally
+    selected_navigation = st.radio("Navigation", navigation_options)
 
     if selected_navigation == "Home":
         st.header("Home")
