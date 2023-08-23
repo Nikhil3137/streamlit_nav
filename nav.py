@@ -53,6 +53,13 @@ def main():
                 color: white; /* Change the font color */
                 width: 100%;
             }
+            /* Change style of dropdown options */
+            .stSelectbox option {
+                background-color: #333; /* Change the background color of options */
+                color: white; /* Change the font color of options */
+                border: none;
+                padding: 10px;
+            }
         </style>
         """,
         unsafe_allow_html=True
