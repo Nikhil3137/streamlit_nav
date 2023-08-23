@@ -2,7 +2,7 @@ import streamlit as st
 
 def main():
     st.title("Multi-Page Streamlit App")
-    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Examples"])
+    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
         st.header("Home")
@@ -10,7 +10,7 @@ def main():
 
     elif navigation == "Results":
         st.header("Results List")
-        for item in range(25):
+        for item in range(10):
             st.write(f"Result {item}")
 
     elif navigation == "Analysis":
@@ -20,7 +20,7 @@ def main():
         st.write(f"Result: {result}")
 
     elif navigation == "Model":
-        st.header("Examples Menu")
+        st.header("Model List")
         st.write("Select an example.")
 
 if __name__ == "__main__":
