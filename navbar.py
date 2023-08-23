@@ -1,22 +1,27 @@
 import streamlit as st
-import hydralit_components as hc
 
-# specify the primary menu definition
-menu_data = [
-        {'icon': "far fa-copy", 'label':"Left End"},
-        {'id':'Copy','icon':"🐙",'label':"Copy"},
-        {'icon': "far fa-chart-bar", 'label':"Chart"},#no tooltip message
-        {'icon': "far fa-address-book", 'label':"Book"},
-        {'id':' Crazy return value 💀','icon': "💀", 'label':"Calendar"},
-        {'icon': "far fa-clone", 'label':"Component"},
-        {'icon': "fas fa-tachometer-alt", 'label':"Dashboard",'ttip':"I'm the Dashboard tooltip!"}, #can add a tooltip message
-        {'icon': "far fa-copy", 'label':"Right End"},
-]
-# we can override any part of the primary colors of the menu
-#over_theme = {'txc_inactive': '#FFFFFF','menu_background':'red','txc_active':'yellow','option_active':'blue'}
-over_theme = {'txc_inactive': '#FFFFFF'}
-menu_id = hc.nav_bar(menu_definition=menu_data,home_name='Home',override_theme=over_theme)
+def main():
+    st.title("Multi-Page Streamlit App")
+    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Examples"])
 
-    
-#get the id of the menu item clicked
-st.info(f"{menu_id=}")
+    if navigation == "Home":
+        st.header("Home")
+        st.write("This is the home page.")
+
+    elif navigation == "Results":
+        st.header("Results List")
+        for item in range(25):
+            st.write(f"Result {item}")
+
+    elif navigation == "Analysis":
+        st.header("Analysis")
+        x, y = st.number_input("Input X"), st.number_input("Input Y")
+        result = x + y
+        st.write(f"Result: {result}")
+
+    elif navigation == "Examples":
+        st.header("Examples Menu")
+        st.write("Select an example.")
+
+if __name__ == "__main__":
+    main()
