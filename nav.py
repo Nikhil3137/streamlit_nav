@@ -1,7 +1,7 @@
 import streamlit as st
 
 def main():
-    st.title("Multi-Page Streamlit App")
+    st.title("NTT DATA")
     navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
