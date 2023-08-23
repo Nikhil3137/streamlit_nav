@@ -2,14 +2,7 @@ import streamlit as st
 
 def main():
     st.title("NTT DATA")
-    
-    # Create a horizontal layout for the radio buttons
-    radio_container = st.container()
-    
-    # Place the radio buttons in the horizontal layout
-    with radio_container:
-        col1, col2, col3, col4 = st.columns(4)
-        navigation = col1.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
+    navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
 
     if navigation == "Home":
         st.header("Home")
@@ -42,14 +35,9 @@ def main():
             st.write("You selected Model C. Here's some information about it.")
             st.write("For more details, visit the [Model C Page](https://yourdomain.com/model_c)")
 
-if __name__ == "__main__":
-    main()
+    # Use st.markdown to create a custom footer
 
-# Use HTML and CSS to create a custom footer
-custom_footer = """
-<div style="background-color: #f4f4f4; padding: 10px; text-align: center;">
-    <p>Contact Us: <a href="mailto:contact@example.com">contact@example.com</a></p>
-    <p><a href="https://yourdomain.com/about_us">Learn more about us</a></p>
-</div>
-"""
-st.markdown(custom_footer, unsafe_allow_html=True)
+    st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
+
+if __name__ == "__main__":
+    main()       
