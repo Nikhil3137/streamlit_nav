@@ -35,8 +35,9 @@ def main():
             st.write("You selected Model C. Here's some information about it.")
             st.write("For more details, visit the [Model C Page](https://yourdomain.com/model_c)")
 
-    # Use st.footer to add a footer at the bottom of the page
-    st.footer("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
+    # Use st.markdown to create a custom footer
+    st.markdown("---")
+    st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
 
 if __name__ == "__main__":
     main()
