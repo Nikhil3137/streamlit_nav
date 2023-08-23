@@ -1,5 +1,3 @@
-import streamlit as st
-
 def main():
     st.title("NTT DATA")
     navigation = st.sidebar.radio("Navigation", ["Home", "Results", "Analysis", "Models"])
@@ -40,4 +38,4 @@ def main():
     st.markdown("Contact Us: contact@example.com | Learn more about us at [About Us](https://yourdomain.com/about_us)")
 
 if __name__ == "__main__":
-    main()       
+    main()    
